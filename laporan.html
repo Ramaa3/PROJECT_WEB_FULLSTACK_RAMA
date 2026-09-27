@@ -1,11 +1,11 @@
-
 <!DOCTYPE html>
-<html lang="id">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pemantauan - NucleoMonitor</title>
+
+    <title>Laporan - NucleoMonitor</title>
 </head>
+
 <body>
 
     <header>
@@ -13,147 +13,177 @@
         <p>Prototype Informasi dan Pemantauan PLTN</p>
     </header>
 
-    <nav aria-label="Navigasi utama">
-        <ul>
-            <li><a href="index.html">Dashboard</a></li>
-            <li><a href="data-pltn.html">Data Fasilitas</a></li>
-            <li><a href="pemantauan.html" aria-current="page">Pemantauan</a></li>
-            <li><a href="laporan.html">Laporan</a></li>
-        </ul>
+    <nav>
+        <tr>
+            <a href="index.html"> Dashboard</a>
+        </tr>
+
+        <tr>
+            <a href="data-pltn.html">Data Fasilitas </a>
+        </tr>
+
+        <tr>
+            <a href="pemantauan.html">Pemantauan Lingkungan</a>
+        </tr>
+
+        <tr>
+            <a href="laporan.html">Laporan Pemantauan</a>
+        </tr>
     </nav>
 
     <main>
-        <h2>Pemantauan Fasilitas</h2>
+        <h2>Laporan Fasilitas</h2>
 
         <p>
-            Halaman ini menampilkan contoh data pemantauan
-            fasilitas pada aplikasi NucleoMonitor.
+            Halaman ini menampilkan riwayat laporan
+            dan formulir untuk memasukkan laporan simulasi.
         </p>
 
         <article>
-            <h3>Status Pemantauan</h3>
+            <h3>Riwayat Laporan</h3>
 
             <p>
                 <strong>Perhatian:</strong>
-                Seluruh nilai berikut merupakan data simulasi
-                untuk keperluan pembelajaran, bukan data
-                operasional dari PLTN nyata.
+                Seluruh laporan berikut merupakan data
+                simulasi untuk keperluan pembelajaran,
+                bukan laporan operasional PLTN nyata.
             </p>
 
             <table>
-                <caption>
-                    Ringkasan Pemantauan (Data Simulasi)
-                </caption>
+                <caption>Daftar Laporan</caption>
 
-                <thead>
-                    <tr>
-                        <th scope="col">Parameter</th>
-                        <th scope="col">Nilai Simulasi</th>
-                        <th scope="col">Satuan</th>
-                        <th scope="col">Keterangan</th>
-                    </tr>
-                </thead>
 
-                <tbody>
-                    <tr>
-                        <th scope="row">Daya keluaran</th>
-                        <td>850</td>
-                        <td>MW</td>
-                        <td>Contoh data simulasi</td>
-                    </tr>
+                <tr>
+                    <th>ID Laporan</th>
+                    <th>Tanggal</th>
+                    <th>ID Fasilitas</th>
+                    <th>Kategori</th>
+                    <th>Status</th>
+                </tr>
 
-                    <tr>
-                        <th scope="row">Suhu pendingin</th>
-                        <td>295</td>
-                        <td>°C</td>
-                        <td>Contoh data simulasi</td>
-                    </tr>
 
-                    <tr>
-                        <th scope="row">Tekanan sistem</th>
-                        <td>15.5</td>
-                        <td>MPa</td>
-                        <td>Contoh data simulasi</td>
-                    </tr>
 
-                    <tr>
-                        <th scope="row">Aliran pendingin</th>
-                        <td>1200</td>
-                        <td>m³/jam</td>
-                        <td>Contoh data simulasi</td>
-                    </tr>
-                </tbody>
+                <tr>
+                    <td>REP-001</td>
+                    <td>25 September 2026</td>
+                    <td>SEN-001</td>
+                    <td>Pemeriksaan rutin (contoh)</td>
+                    <td>Selesai (contoh)</td>
+                </tr>
+
+                <tr>
+                    <td>REP-002</td>
+                    <td>26 September 2026</td>
+                    <td>SEN-002</td>
+                    <td>Pemeliharaan (contoh)</td>
+                    <td>Diproses (contoh)</td>
+                </tr>
+
+                <tr>
+                    <td>REP-003</td>
+                    <td>27 September 2026</td>
+                    <td>SEN-003</td>
+                    <td>Pemeriksaan data (contoh)</td>
+                    <td>Menunggu (contoh)</td>
+                </tr>
             </table>
         </article>
 
         <article>
-            <h3>Informasi Pembaruan Data</h3>
+            <h3>Formulir Tambah Laporan</h3>
 
-            <table>
-                <caption>Informasi Data Simulasi</caption>
+            <p>
+                Formulir berikut hanya merupakan contoh
+                struktur input HTML. Data tidak akan
+                disimpan karena halaman ini belum
+                menggunakan JavaScript atau backend.
+            </p>
 
-                <tbody>
-                    <tr>
-                        <th scope="row">ID fasilitas</th>
-                        <td>SEN-001</td>
-                    </tr>
+            <form>
 
-                    <tr>
-                        <th scope="row">Nama fasilitas</th>
-                        <td>PLTN Edukasi Nusantara</td>
-                    </tr>
+                <p>
+                    <label for="id-laporan">ID Laporan:</label><br>
+                    <input type="text" id="id-laporan" name="id-laporan" placeholder="Contoh: REP-004" required>
+                </p>
 
-                    <tr>
-                        <th scope="row">Waktu pembaruan</th>
-                        <td>27 September 2026, 20.00 WIB</td>
-                    </tr>
+                <p>
+                    <label for="id-fasilitas">ID Fasilitas:</label><br>
+                    <select id="id-fasilitas" name="id-fasilitas" required>
+                        <option value="">-- Pilih Fasilitas --</option>
+                        <option value="SEN-001">SEN-001</option>
+                        <option value="SEN-002">SEN-002</option>
+                        <option value="SEN-003">SEN-003</option>
+                    </select>
+                </p>
 
-                    <tr>
-                        <th scope="row">Sumber data</th>
-                        <td>Data simulasi lokal</td>
-                    </tr>
+                <p>
+                    <label for="tanggal">Tanggal Laporan:</label><br>
+                    <input type="date" id="tanggal" name="tanggal" required>
+                </p>
 
-                    <tr>
-                        <th scope="row">Koneksi sensor</th>
-                        <td>Tidak terhubung</td>
-                    </tr>
-                </tbody>
-            </table>
+                <p>
+                    <label for="kategori">Kategori Laporan:</label><br>
+                    <select id="kategori" name="kategori" required>
+                        <option value="">-- Pilih Kategori --</option>
+                        <option value="pemeriksaan">Pemeriksaan</option>
+                        <option value="pemeliharaan">Pemeliharaan</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="deskripsi">Deskripsi Laporan:</label><br>
+                    <textarea id="deskripsi" name="deskripsi" rows="5" cols="40"
+                        placeholder="Masukkan deskripsi laporan..." required></textarea>
+                </p>
+
+                <p>
+                    <label for="status">Status Laporan:</label><br>
+                    <select id="status" name="status" required>
+                        <option value="">-- Pilih Status --</option>
+                        <option value="menunggu">Menunggu</option>
+                        <option value="diproses">Diproses</option>
+                        <option value="selesai">Selesai</option>
+                    </select>
+                </p>
+
+                <button type="submit">Kirim Laporan</button>
+                <button type="reset">Reset Formulir</button>
+
+            </form>
         </article>
 
         <article>
-            <h3>Catatan Pemantauan</h3>
+            <h3>Catatan</h3>
 
             <p>
-                Data pada halaman ini bersifat statis dan
-                tidak diperbarui secara otomatis.
-                Seluruh nilai hanya digunakan sebagai
-                contoh penyajian informasi.
+                Halaman ini merupakan prototype edukasi.
+                Formulir belum terhubung dengan database
+                dan tidak menyimpan laporan secara permanen.
             </p>
 
             <p>
-                Untuk melihat informasi fasilitas lainnya,
-                kunjungi halaman
+                Untuk melihat data fasilitas, kunjungi
                 <a href="data-pltn.html">Data Fasilitas</a>.
             </p>
 
             <p>
-                Untuk melihat laporan, kunjungi halaman
-                <a href="laporan.html">Laporan</a>.
+                Untuk melihat contoh nilai pemantauan,
+                kunjungi halaman
+                <a href="pemantauan.html">Pemantauan</a>.
             </p>
         </article>
     </main>
 
-
-
 </body>
 
-    <footer>
-        <p>
-            2026 NucleoMonitor.
-            Prototype edukasi, bukan sistem pemantauan
-            waktu nyata, kendali reaktor, atau sistem
-            keselamatan PLTN.
-        </p>
-    </footer>
+<footer>
+    <p>
+        2026 NucleoMonitor.
+        Prototype edukasi, bukan sistem pemantauan
+        waktu nyata, kendali reaktor, atau sistem
+        keselamatan PLTN.
+    </p>
+</footer>
+
 </html>
