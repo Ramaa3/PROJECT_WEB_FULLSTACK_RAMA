@@ -2,13 +2,10 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NucleoMonitor | Dashboard</title>
-
 </head>
 
-<Body>
+<body>
     <header>
         <h1>
             NucleoMonitor
@@ -18,21 +15,157 @@
             Sistem informasi dan Pemantauan Pembangkit Listrik Tenaga Nuklir
         </p>
 
-        <img s
-            rc="PLTN.htm" 
-            alt="Ilustrasi Pembangkit Listrik Tenaga Nuklir"
-            width="320"
-        >
+        <nav>
+
+
+            <tr>
+                <a href="index.html"> Dashboard</a>
+            </tr>
+
+            <tr>
+                <a href="data-pltn.html">Data Fasilitas </a>
+            </tr>
+
+            <tr>
+                <a href="pemantauan.html">Pemantauan Lingkungan</a>
+            </tr>
+
+            <tr>
+                <a href="laporan.html">Laporan Pemantauan</a>
+            </tr>
+
+        </nav>
+
+        <img src="PLTN.jpg" alt="Ilustrasi Pembangkit Listrik Tenaga Nuklir" width="50%" height="50%">
 
     </header>
 
+    <main>
+        <article>
+            <h2>Dashboard Pemantauan PLTN</h2>
+
+            <p>
+                Selamat datang di NucleoMonitor, sebuah
+                aplikasi untuk menampilkan informasi fasilitas
+                pembangkit listrik tenaga nuklir dan data
+                pemantauan lingkungan.
+            </p>
+
+        </article>
+
+        <section>
+            <h2>Ringkasan Kondisi Fasilitas</h2>
+
+            <table>
+
+                <table>
+                    <caption>Informasi Fasilitas </caption>
 
 
-</Body>
+                    <tr>
+                        <th>Nama fasilitas:</th>
+                        <td>PLTN Edukasi Nusantara</td>
+                    </tr>
 
-<Footer>
+                    <tr>
+                        <th>ID fasilitas:</th>
+                        <td>SEN-001</td>
+                    </tr>
+
+                    <tr>
+                        <th>Status simulasi:</th>
+                        <td>Beroperasi</td>
+                    </tr>
+
+                    <tr>
+                        <th>Daya keluaran simulasi:</th>
+                        <td>850 MW</td>
+                    </tr>
+
+                    <tr>
+                        <th>Suhu pendingin simulasi:</th>
+                        <td>295 °C</td>
+                    </tr>
+
+                    <tr>
+                        <th>Waktu pembaruan data simulasi:</th>
+                        <td>27 September 2026, 20.00 WIB</td>
+                    </tr>
+
+                </table>
+
+            </table>
 
 
-</Footer>
+        </section>
+
+        <section>
+            <h2>Menu Pemantauan</h2>
+
+            <article>
+                <h3>Data Fasilitas PLTN</h3>
+
+                <p>
+                    Melihat daftar fasilitas, lokasi contoh,
+                    kapasitas terpasang, dan status simulasi.
+                </p>
+
+                <a href="data-pltn.html">
+                    Lihat Data PLTN
+                </a>
+            </article>
+
+            <article>
+                <h3>Pemantauan Lingkungan</h3>
+
+                <p>
+                    Melihat tabel contoh hasil pencatatan
+                    parameter lingkungan.
+                </p>
+
+                <a href="pemantauan.html">
+                    Lihat Data Pemantauan
+                </a>
+            </article>
+
+            <article>
+                <h3>Laporan Pemantauan</h3>
+
+                <p>
+                    Membuka formulir untuk mencatat laporan
+                    pemantauan sebagai bagian dari simulasi.
+                </p>
+
+                <a href="laporan.html">
+                    Buat Laporan
+                </a>
+            </article>
+        </section>
+
+        <section>
+            <h2>Informasi Aplikasi</h2>
+
+            <p>
+                NucleoMonitor dikembangkan sebagai proyek
+                pembelajaran HTML. Halaman ini menampilkan
+                informasi statis dan belum terhubung dengan
+                sensor, basis data, atau sistem pemantauan
+                PLTN secara langsung.
+            </p>
+        </section>
+    </main>
+
+
+
+</body>
+
+<footer>
+    <p>
+        2026 NucleoMonitor.
+        Prototype edukasi, bukan sistem pemantauan
+        waktu nyata, kendali reaktor, atau sistem
+        keselamatan PLTN.
+    </p>
+</footer>
 
 </html>
