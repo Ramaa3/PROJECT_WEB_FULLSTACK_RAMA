@@ -1,0 +1,226 @@
+
+/* Pengaturan dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.7;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0f172a;
+    color: white;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    border-bottom: 4px solid #22c55e;
+}
+
+/* Logo */
+.navbar > li {
+    list-style: none;
+    flex-shrink: 0;
+}
+
+.logo {
+    display: inline-block;
+    color: white;
+    background: none;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar > li p {
+    color: #cbd5e1;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* Menu navigasi */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.navbar ul li a {
+    display: block;
+    color: #e2e8f0;
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #22c55e;
+    color: #0f172a;
+}
+
+/* Konten utama */
+main {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 0 25px;
+}
+
+main > img {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto 30px;
+    border-radius: 12px;
+}
+
+/* Judul */
+h2 {
+    color: #0f172a;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #0f766e;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Artikel dan section */
+article,
+main > section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+article p,
+section p {
+    margin-bottom: 15px;
+}
+
+/* Tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: white;
+}
+
+caption {
+    text-align: left;
+    font-weight: bold;
+    color: #334155;
+    padding: 12px 0;
+}
+
+th,
+td {
+    padding: 14px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+/*Tabel Ringkasan */
+th {
+    /*latar warna tabel*/
+    background-color: #f8fafc;
+    /*warna tulisan table*/
+    color: rgb(2, 2, 2);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+tbody tr:hover {
+    background-color: #ecfdf5;
+}
+
+/* Link pada konten */
+main a {
+    color: #0f766e;
+    font-weight: bold;
+}
+
+main a:hover {
+    color: #16a34a;
+}
+
+/* Footer */
+footer {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* Tampilan tablet dan HP */
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        justify-content: flex-start;
+    }
+
+    .navbar ul li a {
+        padding: 10px;
+    }
+
+    main {
+        margin: 25px auto;
+        padding: 0 15px;
+    }
+
+    article,
+    main > section {
+        padding: 18px;
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 25px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul li a {
+        padding: 8px 0;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
