@@ -1,0 +1,285 @@
+
+/*PENGATURAN DASAR*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.7;
+}
+
+/*NAVBAR*/
+.navbar {
+    background-color: #0f172a;
+    color: white;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    border-bottom: 4px solid #22c55e;
+}
+
+/* Logo dan deskripsi */
+.navbar > div {
+    flex-shrink: 0;
+}
+
+.navbar .logo {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar > div p {
+    color: #cbd5e1;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* Menu navigasi */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.navbar ul li a {
+    display: block;
+    color: #e2e8f0;
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a[aria-current="page"] {
+    background-color: #22c55e;
+    color: #0f172a;
+}
+
+/*KONTEN UTAMA*/
+main {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 0 25px;
+}
+
+main > h2 {
+    color: #0f172a;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+main > p {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+/*=ARTIKEL / KARTU*/
+article {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+article h3 {
+    color: #0f766e;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+article p {
+    margin-bottom: 15px;
+}
+
+/*TABEL LAPORAN*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+}
+
+caption {
+    text-align: left;
+    font-weight: bold;
+    color: #334155;
+    padding: 12px 0;
+}
+
+th,
+td {
+    border: 1px solid #e2e8f0;
+    padding: 14px;
+    text-align: left;
+}
+
+th {
+    background-color: #0f172a;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+tr:hover {
+    background-color: #ecfdf5;
+}
+
+/*FORMULIR*/
+form {
+    margin-top: 20px;
+}
+
+form p {
+    margin-bottom: 20px;
+}
+
+label {
+    display: inline-block;
+    color: #334155;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background-color: #ffffff;
+    color: #1e293b;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #22c55e;
+    border-color: #16a34a;
+}
+
+/*TOMBOL*/
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 7px;
+    background-color: #16a34a;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px 8px 5px 0;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #15803d;
+}
+
+button[type="reset"] {
+    background-color: #64748b;
+}
+
+button[type="reset"]:hover {
+    background-color: #475569;
+}
+
+/*LINK DAN PERINGATAN*/
+main a {
+    color: #0f766e;
+    font-weight: bold;
+}
+
+main a:hover {
+    color: #16a34a;
+}
+
+strong {
+    color: #b45309;
+}
+
+/*FOOTER*/
+footer {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/*RESPONSIVE*/
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul {
+        justify-content: flex-start;
+    }
+
+    main {
+        margin: 25px auto;
+        padding: 0 15px;
+    }
+
+    article {
+        padding: 18px;
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 650px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .logo {
+        font-size: 25px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul li a {
+        padding: 8px 0;
+    }
+
+    main > h2 {
+        font-size: 23px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
