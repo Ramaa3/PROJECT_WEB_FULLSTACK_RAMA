@@ -11,8 +11,8 @@ body {
     background-color: #f1f5f9;
     color: #1e293b;
     line-height: 1.7;
+    margin: 0;
 }
-
 /*NAVBAR*/
 .navbar {
     background-color: #0f172a;
@@ -21,13 +21,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 25px;
+    gap: 30px;
     flex-wrap: wrap;
     border-bottom: 4px solid #22c55e;
 }
 
 /* Logo dan deskripsi */
-.navbar > div {
+.navbar>li {
+    list-style: none;
     flex-shrink: 0;
 }
 
@@ -40,7 +41,7 @@ body {
     letter-spacing: 1px;
 }
 
-.navbar > div p {
+.navbar>li p {
     color: #cbd5e1;
     font-size: 13px;
     margin-top: 5px;
@@ -53,7 +54,7 @@ body {
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 8px;
 }
 
 .navbar ul li a {
@@ -65,12 +66,10 @@ body {
     transition: 0.3s;
 }
 
-.navbar ul li a:hover,
-.navbar ul li a[aria-current="page"] {
+.navbar ul li a:hover {
     background-color: #22c55e;
     color: #0f172a;
 }
-
 /*KONTEN UTAMA*/
 main {
     max-width: 1200px;
