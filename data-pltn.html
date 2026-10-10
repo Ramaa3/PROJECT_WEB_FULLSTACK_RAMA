@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Fasilitas | NucleoMonitor</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="m-0 bg-[#f1f5f9] text-slate-800">
+
+    <!-- Navbar -->
+    <nav class="border-b-4 border-[#22c55e] bg-[#0f172a]">
+        <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-4">
+
+            <a href="index.html" class="text-2xl font-bold text-white">
+                NucleoMonitor
+                <p class="mt-1 text-xs font-normal text-slate-300">
+                    Sistem Informasi dan Pemantauan PLTN
+                </p>
+            </a>
+
+            <button id="menuButton"
+                class="rounded-lg border border-slate-600 px-3 py-2 text-white hover:bg-slate-700 md:hidden"
+                type="button"
+                aria-expanded="false"
+                aria-controls="navMenu">
+                ☰ Menu
+            </button>
+
+            <div id="navMenu" class="hidden w-full flex-col gap-2 md:flex md:w-auto md:flex-row md:items-center md:gap-4">
+                <a href="index.html"
+                    class="rounded-lg px-3 py-2 text-white transition hover:bg-slate-800 hover:text-[#22c55e]">
+                    Dashboard
+                </a>
+
+                <a href="data-pltn.html" aria-current="page"
+                    class="rounded-lg bg-slate-800 px-3 py-2 font-semibold text-white">
+                    Data Fasilitas
+                </a>
+
+                <a href="pemantauan.html"
+                    class="rounded-lg px-3 py-2 text-white transition hover:bg-slate-800 hover:text-[#22c55e]">
+                    Pemantauan Lingkungan
+                </a>
+
+                <a href="laporan.html"
+                    class="rounded-lg px-3 py-2 text-white transition hover:bg-slate-800 hover:text-[#22c55e]">
+                    Laporan Pemantauan
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <main class="mx-auto max-w-7xl space-y-10 px-5 py-10">
+
+        <!-- Header Halaman -->
+        <section>
+            <p class="mb-3 inline-block rounded-full bg-green-100 px-4 py-2 text-sm font-semibold text-green-800">
+                Informasi Fasilitas
+            </p>
+
+            <h1 class="text-3xl font-bold text-[#0f172a] md:text-4xl">
+                Data Fasilitas PLTN
+            </h1>
+
+            <p class="mt-4 max-w-3xl leading-7 text-slate-600">
+                Halaman ini menampilkan contoh identitas dan informasi fasilitas
+                pembangkit listrik tenaga nuklir sebagai bagian dari prototype
+                sistem NucleoMonitor.
+            </p>
+        </section>
+
+        <!-- Denah Fasilitas -->
+        <section class="grid items-center gap-8 rounded-2xl bg-white p-6 shadow-sm md:grid-cols-2 md:p-8">
+            <div>
+                <h2 class="text-2xl font-bold text-[#0f172a]">
+                    Denah Fasilitas
+                </h2>
+
+                <p class="mt-4 leading-7 text-slate-600">
+                    Ilustrasi berikut digunakan untuk memperkenalkan tata letak
+                    fasilitas dalam contoh sistem. Gambar ini bukan denah operasional
+                    atau dokumen teknis fasilitas nyata.
+                </p>
+
+                <div class="mt-5 rounded-lg border-l-4 border-[#22c55e] bg-green-50 p-4 text-sm leading-6 text-green-900">
+                    Informasi dan ilustrasi pada halaman ini hanya untuk pembelajaran.
+                </div>
+            </div>
+
+            <div>
+                <img src="assets/DENAH_FASILITAS.png"
+                    alt="Ilustrasi denah fasilitas PLTN"
+                    class="h-auto max-h-96 w-full rounded-xl object-contain">
+            </div>
+        </section>
+
+        <!-- Tabel Data Fasilitas -->
+        <section>
+            <h2 class="text-2xl font-bold text-[#0f172a]">
+                Daftar Data Fasilitas
+            </h2>
+
+            <p class="mt-2 mb-5 text-slate-600">
+                Tabel berikut berisi data contoh yang digunakan untuk demonstrasi.
+            </p>
+
+            <div class="overflow-x-auto rounded-xl bg-white shadow-sm">
+                <table class="w-full border-collapse text-left">
+                    <thead class="bg-[#0f172a] text-white">
+                        <tr>
+                            <th scope="col" class="whitespace-nowrap px-5 py-4">No.</th>
+                            <th scope="col" class="whitespace-nowrap px-5 py-4">ID Fasilitas</th>
+                            <th scope="col" class="whitespace-nowrap px-5 py-4">Nama Fasilitas</th>
+                            <th scope="col" class="whitespace-nowrap px-5 py-4">Lokasi Contoh</th>
+                            <th scope="col" class="whitespace-nowrap px-5 py-4">Status Simulasi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="divide-y divide-slate-200">
+                        <tr class="transition hover:bg-slate-50">
+                            <td class="px-5 py-4">1</td>
+                            <td class="px-5 py-4 font-medium">SEN-001</td>
+                            <td class="px-5 py-4">PLTN Edukasi Nusantara</td>
+                            <td class="px-5 py-4">Lokasi A</td>
+                            <td class="px-5 py-4">
+                                <span class="rounded-full bg-green-100 px-3 py-1 text-sm font-semibold text-green-800">
+                                    Beroperasi (Contoh)
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr class="transition hover:bg-slate-50">
+                            <td class="px-5 py-4">2</td>
+                            <td class="px-5 py-4 font-medium">SEN-002</td>
+                            <td class="px-5 py-4">Fasilitas Edukasi B</td>
+                            <td class="px-5 py-4">Lokasi B</td>
+                            <td class="px-5 py-4">
+                                <span class="rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-800">
+                                    Pemeliharaan (Contoh)
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr class="transition hover:bg-slate-50">
+                            <td class="px-5 py-4">3</td>
+                            <td class="px-5 py-4 font-medium">SEN-003</td>
+                            <td class="px-5 py-4">Fasilitas Edukasi C</td>
+                            <td class="px-5 py-4">Lokasi C</td>
+                            <td class="px-5 py-4">
+                                <span class="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700">
+                                    Tidak Aktif (Contoh)
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="mt-4 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm leading-6 text-amber-900">
+                <strong>Catatan:</strong> Seluruh nama, ID, lokasi, dan status dalam
+                tabel merupakan data fiktif untuk demonstrasi. Data tidak menunjukkan
+                kondisi fasilitas PLTN yang sebenarnya.
+            </p>
+        </section>
+
+        <!-- Informasi Tambahan -->
+        <section class="grid gap-6 md:grid-cols-2">
+
+            <article class="rounded-xl bg-white p-6 shadow-sm">
+                <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-green-100 text-2xl text-green-800">
+                    i
+                </div>
+
+                <h2 class="text-xl font-bold text-[#0f172a]">
+                    Informasi Fasilitas
+                </h2>
+
+                <p class="mt-3 leading-7 text-slate-600">
+                    Data fasilitas pada prototype ini berfungsi sebagai contoh
+                    penyajian identitas, lokasi ilustratif, dan status fasilitas.
+                </p>
+            </article>
+
+            <article class="rounded-xl bg-white p-6 shadow-sm">
+                <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-green-100 text-2xl text-green-800">
+                    ✓
+                </div>
+
+                <h2 class="text-xl font-bold text-[#0f172a]">
+                    Tujuan Penggunaan
+                </h2>
+
+                <p class="mt-3 leading-7 text-slate-600">
+                    Halaman ini membantu pengguna memahami bagaimana data fasilitas
+                    dapat disusun dalam sebuah sistem informasi berbasis web.
+                </p>
+            </article>
+
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-10 bg-[#0f172a] px-5 py-6 text-center text-sm leading-6 text-slate-300">
+        <p>&copy; 2026 NucleoMonitor. Prototype untuk keperluan pembelajaran.</p>
+        <p class="mt-1">
+            Bukan sistem pemantauan operasional atau keselamatan PLTN yang sebenarnya.
+        </p>
+    </footer>
+
+    <script>
+        const menuButton = document.getElementById("menuButton");
+        const navMenu = document.getElementById("navMenu");
+
+        menuButton.addEventListener("click", function () {
+            const isHidden = navMenu.classList.toggle("hidden");
+            menuButton.setAttribute("aria-expanded", String(!isHidden));
+        });
+    </script>
+
+</body>
+</html>
