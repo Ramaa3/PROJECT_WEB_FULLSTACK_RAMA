@@ -207,29 +207,158 @@
             </p>
         </section>
 
-        <article>
-            <h3>Status Pemantauan</h3>
+        <!-- Card Pemantauan -->
+        <section>
 
-            <p>
-                <strong>Perhatian:</strong>
-                Seluruh nilai pada halaman ini merupakan
-                data simulasi untuk keperluan pembelajaran.
-                Nilai tersebut bukan hasil pengukuran
-                dari PLTN nyata.
-            </p>
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-[#0f172a]">
+                    Detail Pemantauan Lingkungan
+                </h2>
 
-            <table>
-                <caption>
-                    Ringkasan Pemantauan
-                </caption>
+                <p class="mt-2 text-slate-600">
+                    Informasi fungsi pemantauan pada setiap aspek lingkungan.
+                </p>
+            </div>
 
-                <tr>
-                    <th>Parameter</th>
-                    <th>Nilai Simulasi</th>
-                    <th>Satuan</th>
-                    <th>Keterangan</th>
-                </tr>
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 
+                <!-- Card Udara -->
+                <article class="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+                    <img src="assets/udaraPemantauan.jpg" alt="Foto Udara"
+                        class="h-52 w-full object-cover" >
+
+                    <div class="flex flex-1 flex-col p-6">
+
+                        <div class="mb-3 flex items-center justify-between gap-3">
+                            <span class="rounded-md bg-slate-100 px-3 py-1 text-sm font-bold text-slate-700">
+                                ENV-001
+                            </span>
+
+                            <span class="rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-800">
+                                Udara
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[#0f172a]">
+                            Pemantauan Kualitas Udara
+                        </h3>
+
+                        <p class="mt-2 leading-6 text-slate-600">
+                            Mengamati partikulat dan perubahan parameter
+                            kualitas udara di sekitar fasilitas.
+                        </p>
+
+                        <div class="mt-5 space-y-3 border-t border-slate-200 pt-4 text-sm">
+                            <p>
+                                <span class="font-semibold">Parameter:</span>
+                                PM2.5
+                            </p>
+                            <p>
+                                <span class="font-semibold">Nilai simulasi:</span>
+                                12 µg/m³
+                            </p>
+                            <p>
+                                <span class="font-semibold">Fungsi:</span>
+                                Mengidentifikasi perubahan partikulat udara.
+                            </p>
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- Card Air -->
+                <article class="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+                   <img src="assets/airpemantauan.jpg" alt="Foto Air"
+                        class="h-52 w-full object-cover" >
+
+                    <div class="flex flex-1 flex-col p-6">
+
+                        <div class="mb-3 flex items-center justify-between gap-3">
+                            <span class="rounded-md bg-slate-100 px-3 py-1 text-sm font-bold text-slate-700">
+                                ENV-002
+                            </span>
+
+                            <span class="rounded-full bg-cyan-100 px-3 py-1 text-xs font-semibold text-cyan-800">
+                                Air
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[#0f172a]">
+                            Pemantauan Kualitas Air
+                        </h3>
+
+                        <p class="mt-2 leading-6 text-slate-600">
+                            Mengamati perubahan pH dan parameter kualitas air
+                            untuk mendukung evaluasi kondisi perairan.
+                        </p>
+
+                        <div class="mt-5 space-y-3 border-t border-slate-200 pt-4 text-sm">
+                            <p>
+                                <span class="font-semibold">Parameter:</span>
+                                pH air
+                            </p>
+                            <p>
+                                <span class="font-semibold">Nilai simulasi:</span>
+                                7,2
+                            </p>
+                            <p>
+                                <span class="font-semibold">Fungsi:</span>
+                                Mengidentifikasi perubahan keasaman air.
+                            </p>
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- Card Tanah -->
+                <article class="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+                    <img src="assets/tanahpemantauan.jpg" alt="Foto Tanah"
+                        class="h-52 w-full object-cover" >
+
+                    <div class="flex flex-1 flex-col p-6">
+
+                        <div class="mb-3 flex items-center justify-between gap-3">
+                            <span class="rounded-md bg-slate-100 px-3 py-1 text-sm font-bold text-slate-700">
+                                ENV-003
+                            </span>
+
+                            <span class="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800">
+                                Tanah
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[#0f172a]">
+                            Pemantauan Kondisi Tanah
+                        </h3>
+
+                        <p class="mt-2 leading-6 text-slate-600">
+                            Mengamati perubahan pH dan karakteristik tanah
+                            di sekitar fasilitas.
+                        </p>
+
+                        <div class="mt-5 space-y-3 border-t border-slate-200 pt-4 text-sm">
+                            <p>
+                                <span class="font-semibold">Parameter:</span>
+                                pH tanah
+                            </p>
+                            <p>
+                                <span class="font-semibold">Nilai simulasi:</span>
+                                6,5
+                            </p>
+                            <p>
+                                <span class="font-semibold">Fungsi:</span>
+                                Mendukung pemeriksaan perubahan kondisi tanah.
+                            </p>
+                        </div>
+
+                    </div>
+                </article>
+
+            </div>
+        </section>
 
                 <tr>
                     <td>Daya keluaran : </td>
