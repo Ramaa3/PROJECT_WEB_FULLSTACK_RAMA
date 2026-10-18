@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,13 +21,9 @@
                 </p>
             </a>
 
-            <button
-                id="menuButton"
-                type="button"
+            <button id="menuButton" type="button"
                 class="cursor-pointer rounded-lg p-2 text-2xl text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-green-400 md:hidden"
-                aria-label="Buka menu navigasi"
-                aria-controls="navMenu"
-                aria-expanded="false">
+                aria-label="Buka menu navigasi" aria-controls="navMenu" aria-expanded="false">
                 ☰
             </button>
 
@@ -56,6 +53,16 @@
             </div>
         </div>
     </nav>
+
+
+    <section>
+        <h2 class="mb-4 text-2xl font-bold text-[#0f172a]">
+            Daftar Fasilitas
+        </h2>
+
+        <div id="facilityCards" class="grid grid-cols-1 gap-6 md:grid-cols-3"></div>
+    </section>
+
 
     <main class="mx-auto max-w-7xl space-y-10 px-5 py-10">
 
@@ -95,8 +102,7 @@
             </div>
 
             <div>
-                <img src="assets/DENAH_FASILITAS.png"
-                    alt="Ilustrasi denah fasilitas PLTN"
+                <img src="assets/DENAH_FASILITAS.png" alt="Ilustrasi denah fasilitas PLTN"
                     class="max-h-96 w-full rounded-xl object-contain">
             </div>
 
@@ -134,7 +140,8 @@
                             <td class="px-5 py-4">Lokasi A</td>
                             <td class="px-5 py-4">850 MW</td>
                             <td class="px-5 py-4">
-                                <span class="whitespace-nowrap rounded-full bg-green-100 px-3 py-1 text-sm font-semibold text-green-800">
+                                <span
+                                    class="whitespace-nowrap rounded-full bg-green-100 px-3 py-1 text-sm font-semibold text-green-800">
                                     Beroperasi
                                 </span>
                             </td>
@@ -147,7 +154,8 @@
                             <td class="px-5 py-4">Lokasi B</td>
                             <td class="px-5 py-4">1.000 MW</td>
                             <td class="px-5 py-4">
-                                <span class="whitespace-nowrap rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-800">
+                                <span
+                                    class="whitespace-nowrap rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-800">
                                     Pemeliharaan
                                 </span>
                             </td>
@@ -160,7 +168,8 @@
                             <td class="px-5 py-4">Lokasi C</td>
                             <td class="px-5 py-4">750 MW</td>
                             <td class="px-5 py-4">
-                                <span class="whitespace-nowrap rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700">
+                                <span
+                                    class="whitespace-nowrap rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700">
                                     Tidak Aktif
                                 </span>
                             </td>
@@ -186,11 +195,10 @@
             <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 
                 <!-- Card SEN-001 -->
-                <article class="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <article
+                    class="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
 
-                    <img src="assets/card3.jpg"
-                        alt="Foto Fasilitas PLTN A"
-                        class="h-52 w-full object-cover">
+                    <img src="assets/card3.jpg" alt="Foto Fasilitas PLTN A" class="h-52 w-full object-cover">
 
                     <div class="flex flex-1 flex-col p-6">
 
@@ -232,11 +240,10 @@
                 </article>
 
                 <!-- Card SEN-002 -->
-                <article class="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <article
+                    class="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
 
-                    <img src="assets/card2.jpg"
-                        alt="Foto Fasilitas PLTN B"
-                        class="h-52 w-full object-cover">
+                    <img src="assets/card2.jpg" alt="Foto Fasilitas PLTN B" class="h-52 w-full object-cover">
 
                     <div class="flex flex-1 flex-col p-6">
 
@@ -278,11 +285,10 @@
                 </article>
 
                 <!-- Card SEN-003 -->
-                <article class="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <article
+                    class="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
 
-                    <img src="assets/card1.jpg"
-                        alt="Foto Fasilitas PLTN C"
-                        class="h-52 w-full object-cover">
+                    <img src="assets/card1.jpg" alt="Foto Fasilitas PLTN C" class="h-52 w-full object-cover">
 
                     <div class="flex flex-1 flex-col p-6">
 
@@ -350,4 +356,5 @@
     </footer>
 
 </body>
+
 </html>
