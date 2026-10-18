@@ -1,181 +1,272 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 
 <head>
-
-    <title>Laporan - NucleoMonitor</title>
-    <link rel="stylesheet" href="styleLaporan.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Pemantauan - NucleoMonitor</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
-    <nav class="navbar">
-        <li>
-            <a href="#" class="logo">NucleoMonitor</a>
-            <p>Sistem informasi dan Pemantauan Pembangkit Listrik Tenaga Nuklir </p>
-        </li>
-        <ul>
-            <li> <a href="index.html"> Dashboard</a></li>
-            <li> <a href="data-pltn.html">Data Fasilitas </a></li>
-            <li><a href="pemantauan.html">Pemantauan Lingkungan</a></li>
-            <li><a href="laporan.html">Laporan Pemantauan</a></li>
-        </ul>
+<body class="m-0 bg-[#f1f5f9] text-slate-800">
 
+    <!-- Navbar -->
+    <nav class="border-b-4 border-[#22c55e] bg-[#0f172a]">
+        <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-4">
+
+            <a href="index.html" class="text-2xl font-bold text-white">
+                NucleoMonitor
+                <p class="mt-1 text-xs font-normal text-slate-300">
+                    Sistem Informasi dan Pemantauan PLTN
+                </p>
+            </a>
+
+            <button id="menuButton" type="button"
+                class="cursor-pointer rounded-lg p-2 text-2xl text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-green-400 md:hidden"
+                aria-label="Buka menu navigasi" aria-controls="navMenu" aria-expanded="false">
+                ☰
+            </button>
+
+            <div id="navMenu"
+                class="hidden w-full flex-col gap-2 md:flex md:w-auto md:flex-row md:items-center md:gap-4">
+
+                <a href="index.html"
+                    class="rounded-lg px-3 py-2 text-white transition hover:bg-slate-800 hover:text-[#22c55e]">
+                    Dashboard
+                </a>
+
+                <a href="data-pltn.html"
+                    class="rounded-lg px-3 py-2 text-white transition hover:bg-slate-800 hover:text-[#22c55e]">
+                    Data Fasilitas
+                </a>
+
+                <a href="pemantauan.html" aria-current="page"
+                    class="rounded-lg bg-slate-800 px-3 py-2 font-semibold text-white">
+                    Pemantauan Lingkungan
+                </a>
+
+                <a href="laporan.html"
+                    class="rounded-lg px-3 py-2 text-white transition hover:bg-slate-800 hover:text-[#22c55e]">
+                    Laporan Pemantauan
+                </a>
+
+            </div>
+        </div>
     </nav>
+    <!-- Konten Utama -->
+    <main class="mx-auto max-w-7xl space-y-10 px-5 py-10 item-center ">
 
 
-    <main>
-        <h2>Laporan Fasilitas</h2>
+        <!-- Section Judul -->
+        <section class="w-full space-y-3">
+            <span class="inline-block rounded-full bg-green-100 px-4 py-2 text-sm font-semibold text-green-800">
+                Laporan Pemantauan
+            </span>
 
-        <p>
-            Halaman ini menampilkan riwayat laporan
-            dan formulir untuk memasukkan laporan simulasi.
-        </p>
+            <h1 class="text-3xl font-bold text-[#0f172a]">
+                Laporan Fasilitas PLTN
+            </h1>
 
-        <article>
-            <h3>Riwayat Laporan</h3>
+            <p class="max-w-3xl leading-7 text-slate-600">
+                Halaman ini digunakan untuk melihat riwayat laporan dan
+                memasukkan laporan pemantauan lingkungan. Seluruh data
+                pada halaman ini merupakan data simulasi untuk keperluan edukasi.
+            </p>
+        </section>
 
-            <p>
-                <strong>Perhatian:</strong>
-                Seluruh laporan berikut merupakan data
-                simulasi untuk keperluan pembelajaran,
-                bukan laporan operasional PLTN nyata.
+        <!-- Ringkasan -->
+        <section class="grid grid-cols-1 gap-5 md:grid-cols-3">
+
+            <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                <p class="text-sm text-slate-500">Total Laporan</p>
+                <p class="mt-2 text-3xl font-bold text-[#0f172a]">3</p>
+                <p class="mt-2 text-sm text-slate-500">Data simulasi</p>
+            </div>
+
+            <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                <p class="text-sm text-slate-500">Laporan Ditinjau</p>
+                <p class="mt-2 text-3xl font-bold text-green-700">2</p>
+                <p class="mt-2 text-sm text-slate-500">Data simulasi</p>
+            </div>
+
+            <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                <p class="text-sm text-slate-500">Menunggu Tinjauan</p>
+                <p class="mt-2 text-3xl font-bold text-amber-600">1</p>
+                <p class="mt-2 text-sm text-slate-500">Data simulasi</p>
+            </div>
+
+        </section>
+
+        <!-- Riwayat Laporan -->
+        <section class="w-full rounded-xl border-l-4 border-[#22c55e] bg-white p-6 shadow-sm">
+            <h2 class="text-xl font-bold text-[#0f172a]">
+                Riwayat Laporan
+            </h2>
+
+            <p class="mt-2 leading-6 text-slate-600">
+                Contoh daftar laporan pemantauan yang telah dicatat.
             </p>
 
-            <table>
-                <caption>Daftar Laporan</caption>
+            <div class="mt-5 w-full overflow-x-auto">
+                <table class="w-full min-w-[650px] border-collapse text-left">
+                    <thead class="bg-[#0f172a] text-white">
+                        <tr>
+                            <th class="p-4">ID Laporan</th>
+                            <th class="p-4">Kategori</th>
+                            <th class="p-4">Tanggal Simulasi</th>
+                            <th class="p-4">Status</th>
+                        </tr>
+                    </thead>
 
+                    <tbody>
+                        <tr class="border-b border-slate-200">
+                            <td class="p-4">LAP-001</td>
+                            <td class="p-4">Kualitas Udara</td>
+                            <td class="p-4">27 September 2026</td>
+                            <td class="p-4">
+                                <span class="rounded-full bg-green-100 px-3 py-1 text-sm text-green-800">
+                                    Ditinjau
+                                </span>
+                            </td>
+                        </tr>
 
-                <tr>
-                    <th>ID Laporan</th>
-                    <th>Tanggal</th>
-                    <th>ID Fasilitas</th>
-                    <th>Kategori</th>
-                    <th>Status</th>
-                </tr>
+                        <tr class="border-b border-slate-200">
+                            <td class="p-4">LAP-002</td>
+                            <td class="p-4">Kualitas Air</td>
+                            <td class="p-4">28 September 2026</td>
+                            <td class="p-4">
+                                <span class="rounded-full bg-green-100 px-3 py-1 text-sm text-green-800">
+                                    Ditinjau
+                                </span>
+                            </td>
+                        </tr>
 
+                        <tr>
+                            <td class="p-4">LAP-003</td>
+                            <td class="p-4">Kualitas Tanah</td>
+                            <td class="p-4">29 September 2026</td>
+                            <td class="p-4">
+                                <span class="rounded-full bg-amber-100 px-3 py-1 text-sm text-amber-800">
+                                    Menunggu Tinjauan
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
+        <!-- Form Laporan -->
+        <section class="w-full rounded-xl border-l-4 border-[#22c55e] bg-white p-6 shadow-sm">
+            <h2 class="text-xl font-bold text-[#0f172a]">
+                Tambah Laporan Pemantauan
+            </h2>
 
-                <tr>
-                    <td>REP-001</td>
-                    <td>25 September 2026</td>
-                    <td>SEN-001</td>
-                    <td>Pemeriksaan rutin (contoh)</td>
-                    <td>Selesai (contoh)</td>
-                </tr>
-
-                <tr>
-                    <td>REP-002</td>
-                    <td>26 September 2026</td>
-                    <td>SEN-002</td>
-                    <td>Pemeliharaan (contoh)</td>
-                    <td>Diproses (contoh)</td>
-                </tr>
-
-                <tr>
-                    <td>REP-003</td>
-                    <td>27 September 2026</td>
-                    <td>SEN-003</td>
-                    <td>Pemeriksaan data (contoh)</td>
-                    <td>Menunggu (contoh)</td>
-                </tr>
-            </table>
-        </article>
-
-        <article>
-            <h3>Formulir Tambah Laporan</h3>
-
-            <p>
-                Formulir berikut hanya merupakan contoh
-                struktur input HTML. Data tidak akan
-                disimpan karena halaman ini belum
-                menggunakan JavaScript atau backend.
+            <p class="mt-2 leading-6 text-slate-600">
+                Isi formulir berikut untuk membuat contoh laporan.
+                Formulir ini belum menyimpan data ke database.
             </p>
 
-            <form>
+            <form id="reportForm" class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2">
 
-                <p>
-                    <label for="id-laporan">ID Laporan:</label><br>
-                    <input type="text" id="id-laporan" name="id-laporan" placeholder="Contoh: REP-004" required>
-                </p>
+                <div>
+                    <label for="reportId" class="mb-2 block font-medium">
+                        ID Laporan
+                    </label>
+                    <input id="reportId" name="reportId" type="text" placeholder="Contoh: LAP-004" required
+                        class="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100">
+                </div>
 
-                <p>
-                    <label for="id-fasilitas">ID Fasilitas:</label><br>
-                    <select id="id-fasilitas" name="id-fasilitas" required>
-                        <option value="">-- Pilih Fasilitas --</option>
-                        <option value="SEN-001">SEN-001</option>
-                        <option value="SEN-002">SEN-002</option>
-                        <option value="SEN-003">SEN-003</option>
+                <div>
+                    <label for="category" class="mb-2 block font-medium">
+                        Kategori Pemantauan
+                    </label>
+                    <select id="category" name="category" required
+                        class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100">
+                        <option value="">Pilih kategori</option>
+                        <option value="Kualitas Udara">Kualitas Udara</option>
+                        <option value="Kualitas Air">Kualitas Air</option>
+                        <option value="Kualitas Tanah">Kualitas Tanah</option>
+                        <option value="Lainnya">Lainnya</option>
                     </select>
-                </p>
+                </div>
 
-                <p>
-                    <label for="tanggal">Tanggal Laporan:</label><br>
-                    <input type="date" id="tanggal" name="tanggal" required>
-                </p>
+                <div>
+                    <label for="reportDate" class="mb-2 block font-medium">
+                        Tanggal Laporan
+                    </label>
+                    <input id="reportDate" name="reportDate" type="date" required
+                        class="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100">
+                </div>
 
-                <p>
-                    <label for="kategori">Kategori Laporan:</label><br>
-                    <select id="kategori" name="kategori" required>
-                        <option value="">-- Pilih Kategori --</option>
-                        <option value="pemeriksaan">Pemeriksaan</option>
-                        <option value="pemeliharaan">Pemeliharaan</option>
-                        <option value="lainnya">Lainnya</option>
+                <div>
+                    <label for="reportStatus" class="mb-2 block font-medium">
+                        Status Laporan
+                    </label>
+                    <select id="reportStatus" name="reportStatus" required
+                        class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100">
+                        <option value="Menunggu Tinjauan">Menunggu Tinjauan</option>
+                        <option value="Ditinjau">Ditinjau</option>
                     </select>
-                </p>
+                </div>
 
-                <p>
-                    <label for="deskripsi">Deskripsi Laporan:</label><br>
-                    <textarea id="deskripsi" name="deskripsi" rows="5" cols="40"
-                        placeholder="Masukkan deskripsi laporan..." required></textarea>
-                </p>
+                <div class="md:col-span-2">
+                    <label for="description" class="mb-2 block font-medium">
+                        Deskripsi Laporan
+                    </label>
+                    <textarea id="description" name="description" rows="4"
+                        placeholder="Tuliskan deskripsi laporan simulasi..." required
+                        class="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100"></textarea>
+                </div>
 
-                <p>
-                    <label for="status">Status Laporan:</label><br>
-                    <select id="status" name="status" required>
-                        <option value="">-- Pilih Status --</option>
-                        <option value="menunggu">Menunggu</option>
-                        <option value="diproses">Diproses</option>
-                        <option value="selesai">Selesai</option>
-                    </select>
-                </p>
+                <div class="md:col-span-2">
+                    <button type="submit"
+                        class="rounded-lg bg-[#0f172a] px-6 py-3 font-semibold text-white transition hover:bg-green-700">
+                        Buat Laporan
+                    </button>
+                </div>
 
-                <button type="submit">Kirim Laporan</button>
-                <button type="reset">Reset Formulir</button>
-
+                <p id="formMessage" class="hidden md:col-span-2 rounded-lg bg-green-50 p-4 text-green-800"
+                    role="status"></p>
             </form>
-        </article>
+        </section>
 
-        <article>
-            <h3>Catatan</h3>
-
-            <p>
-                Halaman ini merupakan prototype edukasi.
-                Formulir belum terhubung dengan database
-                dan tidak menyimpan laporan secara permanen.
-            </p>
-
-            <p>
-                Untuk melihat data fasilitas, kunjungi
-                <a href="data-pltn.html">Data Fasilitas</a>.
-            </p>
-
-            <p>
-                Untuk melihat contoh nilai pemantauan,
-                kunjungi halaman
-                <a href="pemantauan.html">Pemantauan</a>.
-            </p>
-        </article>
     </main>
 
-</body>
+    <!-- Footer -->
+    <footer class="bg-[#0f172a] px-5 py-6 text-center text-sm leading-6 text-slate-300">
+        <p>NucleoMonitor — Prototype Edukasi Pemantauan PLTN</p>
+        <p>Seluruh informasi dan angka pada halaman ini adalah data simulasi, bukan data operasional nyata.</p>
+    </footer>
 
-<footer>
-    <p>
-        2026 NucleoMonitor.
-        Prototype edukasi, bukan sistem pemantauan
-        waktu nyata, kendali reaktor, atau sistem
-        keselamatan PLTN.
-    </p>
-</footer>
+    <script>
+        const menuButton = document.getElementById("menuButton");
+        const navMenu = document.getElementById("navMenu");
+
+        menuButton.addEventListener("click", function () {
+            navMenu.classList.toggle("hidden");
+            navMenu.classList.toggle("flex");
+
+            const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+            menuButton.setAttribute("aria-expanded", String(!isExpanded));
+        });
+
+        const reportForm = document.getElementById("reportForm");
+        const formMessage = document.getElementById("formMessage");
+
+        reportForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const reportId = document.getElementById("reportId").value.trim();
+
+            formMessage.textContent =
+                "Laporan simulasi " + reportId +
+                " berhasil diperiksa oleh formulir. Data belum disimpan dan akan hilang saat halaman dimuat ulang.";
+
+            formMessage.classList.remove("hidden");
+        });
+    </script>
+
+</body>
 
 </html>
