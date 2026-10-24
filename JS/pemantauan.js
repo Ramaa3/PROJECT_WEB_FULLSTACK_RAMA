@@ -1,45 +1,56 @@
 
 $(document).ready(function () {
-    const monitoring = window.NucleoData.monitoring;
+    const $tbody = $("#monitoringTableBody");
+    const data = window.NucleoData.monitoring;
+    const $filter = $("#monitoringFilter");
 
-    function tampilkanPemantauan(jenis = "Semua") {
-        const tbody = $("#monitoringTableBody");
-        tbody.empty();
+    function renderMonitoring(jenis) {
+        $tbody.empty();
 
-        const hasilFilter = monitoring.filter(function (item) {
+        const filteredData = data.filter(function (item) {
             return jenis === "Semua" || item.type === jenis;
         });
 
-        if (hasilFilter.length === 0) {
-            $("<tr>")
-                .append(
-                    $("<td>")
-                        .attr("colspan", 4)
-                        .addClass("p-4 text-center")
-                        .text("Data tidak ditemukan.")
-                )
-                .appendTo(tbody);
+        if (filteredData.length === 0) {
+            const $row = $("<tr>");
 
+            $("<td>")
+                .attr("colspan", 6)
+                .addClass("px-5 py-4 text-center")
+                .text("Data tidak ditemukan.")
+                .appendTo($row);
+
+            $tbody.append($row);
             return;
         }
 
-        hasilFilter.forEach(function (item) {
-            const row = $("<tr>").addClass("border-b border-slate-200");
+        filteredData.forEach(function (item, index) {
+            const $row = $("<tr>")
+                .addClass("transition hover:bg-slate-50");
 
-            [item.id, item.type, item.value, item.status].forEach(function (value) {
+            const values = [
+                index + 1,
+                item.id,
+                item.type,
+                item.parameter,
+                item.value,
+                item.activity
+            ];
+
+            values.forEach(function (value) {
                 $("<td>")
-                    .addClass("p-4")
+                    .addClass("px-5 py-4")
                     .text(value)
-                    .appendTo(row);
+                    .appendTo($row);
             });
 
-            tbody.append(row);
+            $tbody.append($row);
         });
     }
 
-    $("#monitoringFilter").on("change", function () {
-        tampilkanPemantauan($(this).val());
+    $filter.on("change", function () {
+        renderMonitoring($(this).val());
     });
 
-    tampilkanPemantauan();
+    renderMonitoring("Semua");
 });

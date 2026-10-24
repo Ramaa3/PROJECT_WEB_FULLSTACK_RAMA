@@ -1,14 +1,21 @@
 
 $(document).ready(function () {
     $("#menuButton").on("click", function () {
-        const menu = $("#navMenu");
+        const $menu = $("#navMenu");
+        const sedangTerbuka =
+            $(this).attr("aria-expanded") === "true";
 
-        if (menu.hasClass("hidden")) {
-            menu.removeClass("hidden").hide().slideDown(200);
-        } else {
-            menu.stop(true, true).slideUp(200, function () {
-                menu.addClass("hidden").removeAttr("style");
+        if (sedangTerbuka) {
+            $menu.stop(true, true).slideUp(180, function () {
+                $menu.addClass("hidden").removeAttr("style");
             });
+        } else {
+            $menu.removeClass("hidden").hide().slideDown(180);
         }
+
+        $(this).attr(
+            "aria-expanded",
+            String(!sedangTerbuka)
+        );
     });
 });

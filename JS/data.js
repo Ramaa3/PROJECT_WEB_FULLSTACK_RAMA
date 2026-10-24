@@ -1,59 +1,66 @@
-
-window.NucleoData = {
-    facilities: [
+window.pltnData = {
+    fasilitas: [
         {
             id: "SEN-001",
-            name: "Fasilitas A",
-            status: "Beroperasi (simulasi)",
-            capacity: "850 MW"
+            nama: "PLTN Edukasi Nusantara",
+            lokasi: "Jawa Barat",
+            kapasitas: "850 MW",
+            status: "Beroperasi"
         },
         {
             id: "SEN-002",
-            name: "Fasilitas B",
-            status: "Pemeliharaan (simulasi)",
-            capacity: "700 MW"
+            nama: "PLTN Nusantara Timur",
+            lokasi: "Jawa Timur",
+            kapasitas: "1000 MW",
+            status: "Pemeliharaan"
         },
         {
             id: "SEN-003",
-            name: "Fasilitas C",
-            status: "Siaga (simulasi)",
-            capacity: "600 MW"
+            nama: "PLTN Nusantara Barat",
+            lokasi: "Banten",
+            kapasitas: "750 MW",
+            status: "Tidak Aktif"
         }
     ],
 
-    monitoring: [
+    pemantauan: [
         {
             id: "ENV-001",
-            type: "Udara",
-            value: "12 µg/m³",
-            status: "Normal (simulasi)"
+            jenis: "Udara",
+            parameter: "PM2.5",
+            nilai: "12 µg/m³",
+            aktivitas: "Normal"
         },
         {
             id: "ENV-002",
-            type: "Air",
-            value: "pH 7.2",
-            status: "Normal (simulasi)"
+            jenis: "Air",
+            parameter: "pH Air",
+            nilai: "7,2",
+            aktivitas: "Normal"
         },
         {
             id: "ENV-003",
-            type: "Tanah",
-            value: "pH 6.5",
-            status: "Normal (simulasi)"
+            jenis: "Tanah",
+            parameter: "pH Tanah",
+            nilai: "6,5",
+            aktivitas: "Normal"
         }
     ],
 
-    reports: [
+    laporan: [
         {
             id: "LAP-001",
-            title: "Pemeriksaan fasilitas",
-            category: "Fasilitas",
-            status: "Selesai"
+            kategori: "Lingkungan",
+            tanggal: "2026-10-20",
+            status: "Menunggu Tinjauan",
+            deskripsi: "Laporan simulasi pemantauan udara."
         },
         {
             id: "LAP-002",
-            title: "Pemeriksaan data lingkungan",
-            category: "Lingkungan",
-            status: "Diproses"
+            kategori: "Fasilitas",
+            tanggal: "2026-10-21",
+            status: "Ditinjau",
+            deskripsi: "Laporan simulasi pemeriksaan fasilitas."
         }
     ]
 };

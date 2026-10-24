@@ -1,37 +1,50 @@
 
 $(document).ready(function () {
-    const facilities = window.NucleoData.facilities;
+    const $tbody = $("#facilityTableBody");
+    const data = window.NucleoData.facilities;
 
-    function tampilkanFasilitas() {
-        const container = $("#facilityCards");
-        container.empty();
+    const statusClasses = {
+        "Beroperasi": "bg-green-100 text-green-800",
+        "Pemeliharaan": "bg-amber-100 text-amber-800",
+        "Tidak Aktif": "bg-slate-100 text-slate-700"
+    };
 
-        facilities.forEach(function (facility) {
-            const card = $("<div>")
-                .addClass("rounded-xl bg-white p-6 shadow-sm");
+    $tbody.empty();
 
-            $("<h3>")
-                .addClass("mb-2 text-xl font-bold text-[#0f172a]")
-                .text(facility.name)
-                .appendTo(card);
+    data.forEach(function (item, index) {
+        const $row = $("<tr>")
+            .addClass("transition hover:bg-slate-50");
 
-            $("<p>")
-                .addClass("mb-2 text-sm text-slate-500")
-                .text("ID: " + facility.id)
-                .appendTo(card);
+        const values = [
+            index + 1,
+            item.id,
+            item.name,
+            item.location,
+            item.capacity
+        ];
 
-            $("<p>")
-                .addClass("mb-2")
-                .text("Status: " + facility.status)
-                .appendTo(card);
-
-            $("<p>")
-                .text("Kapasitas: " + facility.capacity)
-                .appendTo(card);
-
-            container.append(card);
+        values.forEach(function (value) {
+            $("<td>")
+                .addClass("px-5 py-4")
+                .text(value)
+                .appendTo($row);
         });
-    }
 
-    tampilkanFasilitas();
+        const $status = $("<span>")
+            .addClass(
+                "whitespace-nowrap rounded-full px-3 py-1 text-sm font-semibold"
+            )
+            .addClass(
+                statusClasses[item.status] ||
+                "bg-slate-100 text-slate-700"
+            )
+            .text(item.status);
+
+        $("<td>")
+            .addClass("px-5 py-4")
+            .append($status)
+            .appendTo($row);
+
+        $tbody.append($row);
+    });
 });

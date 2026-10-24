@@ -1,79 +1,146 @@
 
 $(document).ready(function () {
     const data = window.NucleoData;
+    const $tbody = $("#reportHistoryBody");
+    const $form = $("#reportForm");
+    const $message = $("#formMessage");
+    const $toggle = $("#toggleReportForm");
 
-    function tampilkanLaporan() {
-        const tbody = $("#reportTableBody");
-        tbody.empty();
-
-        data.reports.forEach(function (report) {
-            const row = $("<tr>").addClass("border-b border-slate-200");
-
-            [report.id, report.title, report.category, report.status]
-                .forEach(function (value) {
-                    $("<td>")
-                        .addClass("p-3")
-                        .text(value)
-                        .appendTo(row);
-                });
-
-            const deleteButton = $("<button>")
-                .attr("type", "button")
-                .addClass("rounded bg-red-600 px-3 py-1 text-white")
-                .text("Hapus")
-                .on("click", function () {
-                    data.reports = data.reports.filter(function (item) {
-                        return item.id !== report.id;
-                    });
-
-                    tampilkanLaporan();
-                });
-
-            $("<td>")
-                .addClass("p-3")
-                .append(deleteButton)
-                .appendTo(row);
-
-            tbody.append(row);
-        });
+    function showMessage(message, success) {
+        $message
+            .removeClass(
+                "hidden bg-green-50 text-green-800 bg-red-50 text-red-800"
+            )
+            .addClass(
+                success
+                    ? "bg-green-50 text-green-800"
+                    : "bg-red-50 text-red-800"
+            )
+            .text(message);
     }
 
-    $("#toggleReportForm").on("click", function () {
-        $("#reportForm").stop(true, true).slideToggle(200);
+    function renderReports() {
+        $tbody.empty();
+
+        data.reports.forEach(function (report) {
+            const $row = $("<tr>")
+                .addClass("border-b border-slate-200");
+
+            [report.id, report.category, report.date].forEach(
+                function (value) {
+                    $("<td>")
+                        .addClass("p-4")
+                        .text(value)
+                        .appendTo($row);
+                }
+            );
+
+            const reviewed = report.status === "Ditinjau";
+
+            const $badge = $("<span>")
+                .addClass("rounded-full px-3 py-1 text-sm")
+                .addClass(
+                    reviewed
+                        ? "bg-green-100 text-green-800"
+                        : "bg-amber-100 text-amber-800"
+                )
+                .text(report.status);
+
+            $("<td>")
+                .addClass("p-4")
+                .append($badge)
+                .appendTo($row);
+
+            $tbody.append($row);
+        });
+
+        $("#reportTotalCount").text(data.reports.length);
+
+        $("#reportReviewedCount").text(
+            data.reports.filter(function (report) {
+                return report.status === "Ditinjau";
+            }).length
+        );
+
+        $("#reportPendingCount").text(
+            data.reports.filter(function (report) {
+                return report.status !== "Ditinjau";
+            }).length
+        );
+    }
+
+    $toggle.on("click", function () {
+        const expanded =
+            $(this).attr("aria-expanded") === "true";
+
+        if (expanded) {
+            $form.stop(true, true).slideUp(200);
+        } else {
+            $form.stop(true, true).slideDown(200);
+        }
+
+        $(this).attr("aria-expanded", String(!expanded));
+
+        $(this).text(
+            expanded ? "Tampilkan Form" : "Sembunyikan Form"
+        );
     });
 
-    $("#reportForm").on("submit", function (event) {
+    $form.on("submit", function (event) {
         event.preventDefault();
 
-        const title = $("#reportTitle").val().trim();
-        const category = $("#reportCategory").val();
+        const id = $("#reportId").val().trim();
+        const category = $("#category").val();
+        const date = $("#reportDate").val();
+        const status = $("#reportStatus").val();
+        const description = $("#description").val().trim();
 
-        if (!title) {
-            $("#reportMessage")
-                .text("Judul laporan wajib diisi.")
-                .addClass("text-red-600");
+        if (!id || !category || !date || !status || !description) {
+            showMessage("Semua kolom wajib diisi.", false);
             return;
         }
 
-        const newReport = {
-            id: "LAP-" + String(Date.now()).slice(-6),
-            title: title,
+        const duplicate = data.reports.some(function (report) {
+            return report.id.toLowerCase() === id.toLowerCase();
+        });
+
+        if (duplicate) {
+            showMessage("ID laporan sudah digunakan.", false);
+            return;
+        }
+
+        const parts = date.split("-");
+        const months = [
+            "Januari", "Februari", "Maret", "April",
+            "Mei", "Juni", "Juli", "Agustus",
+            "September", "Oktober", "November", "Desember"
+        ];
+
+        const formattedDate =
+            Number(parts[2]) + " " +
+            months[Number(parts[1]) - 1] + " " +
+            parts[0];
+
+        data.reports.push({
+            id: id,
             category: category,
-            status: "Baru"
-        };
+            date: formattedDate,
+            status: status,
+            description: description
+        });
 
-        data.reports.push(newReport);
-
-        tampilkanLaporan();
+        renderReports();
         this.reset();
 
-        $("#reportMessage")
-            .removeClass("text-red-600")
-            .addClass("text-green-700")
-            .text("Laporan berhasil ditambahkan.");
+        showMessage(
+            "Laporan simulasi berhasil ditambahkan. Data belum tersimpan permanen.",
+            true
+        );
 
-        $("#reportForm").slideUp(200);
+        $form.stop(true, true).slideUp(200);
+        $toggle.attr("aria-expanded", "false");
+        $toggle.text("Tampilkan Form");
     });
 
-    tampilkanLaporan();
+    renderReports();
 });
