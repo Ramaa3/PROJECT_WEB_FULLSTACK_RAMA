@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NucleoMonitor | Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</head>
+
+<body class="m-0 bg-[#f1f5f9] text-slate-800">
+
+    <nav class="border-b-4 border-[#22c55e] bg-[#0f172a]">
+        <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-4">
+
+            <a href="index.html" class="text-2xl font-bold text-white">
+                NucleoMonitor
+                <p class="mt-1 text-xs font-normal text-slate-300">
+                    Sistem Informasi dan Pemantauan PLTN
+                </p>
+            </a>
+
+            <button id="menuButton" type="button"
+                class="cursor-pointer rounded-lg p-2 text-2xl text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-green-400 md:hidden"
+                aria-label="Buka menu navigasi" aria-controls="navMenu" aria-expanded="false">
+                ☰
+            </button>
+
+            <div id="navMenu"
+                class="hidden w-full flex-col gap-2 md:flex md:w-auto md:flex-row md:items-center md:gap-4">
+                <a href="index.html" aria-current="page"
+                    class="rounded-lg bg-slate-800 px-3 py-2 font-semibold text-white">
+                    Dashboard
+                </a>
+
+                <a href="data-pltn.html"
+                    class="rounded-lg px-3 py-2 text-white transition hover:bg-slate-800 hover:text-[#22c55e]">
+                    Data Fasilitas
+                </a>
+
+                <a href="pemantauan.html"
+                    class="rounded-lg px-3 py-2 text-white transition hover:bg-slate-800 hover:text-[#22c55e]">
+                    Pemantauan Lingkungan
+                </a>
+
+                <a href="laporan.html"
+                    class="rounded-lg px-3 py-2 text-white transition hover:bg-slate-800 hover:text-[#22c55e]">
+                    Laporan Pemantauan
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+
+    <main class="mx-auto max-w-7xl space-y-12 px-5 py-10">
+
+        <section class="grid items-center gap-8 md:grid-cols-2">
+            <div>
+                <span class="inline-block rounded-full bg-green-100 px-4 py-2 text-sm font-semibold text-green-800">
+                    Sistem Informasi
+                </span>
+
+                <h1 class="mt-4 text-3xl font-bold leading-tight text-[#0f172a] md:text-5xl">
+                    Dashboard Pemantauan PLTN
+                </h1>
+
+                <p class="mt-5 leading-7 text-slate-600">
+                    NucleoMonitor merupakan prototype sistem informasi untuk
+                    menampilkan data fasilitas, simulasi pemantauan lingkungan,
+                    dan laporan pemantauan pembangkit listrik tenaga nuklir.
+                </p>
+
+                <a href="data-pltn.html"
+                    class="mt-6 inline-block rounded-lg bg-[#16a34a] px-6 py-3 font-semibold text-white transition hover:bg-[#15803d]">
+                    Lihat Data Fasilitas
+                </a>
+            </div>
+
+            <div>
+                <img src="assets/PLTN.jpg" alt="Ilustrasi pembangkit listrik tenaga nuklir"
+                    class="max-h-96 w-full rounded-2xl object-cover shadow-lg">
+            </div>
+        </section>
+
+        <!-- untuk js -->
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div class="rounded-xl bg-white p-6 shadow-sm">
+                <h3 class="font-semibold">Total Fasilitas</h3>
+                <p id="dashboardFacilityCount" class="mt-2 text-3xl font-bold text-[#0f172a]">0</p>
+            </div>
+
+            <div class="rounded-xl bg-white p-6 shadow-sm">
+                <h3 class="font-semibold">Data Pemantauan</h3>
+                <p id="dashboardMonitoringCount" class="mt-2 text-3xl font-bold text-[#0f172a]">0</p>
+            </div>
+
+            <div class="rounded-xl bg-white p-6 shadow-sm">
+                <h3 class="font-semibold">Total Laporan</h3>
+                <p id="dashboardReportCount" class="mt-2 text-3xl font-bold text-[#0f172a]">0</p>
+            </div>
+        </div>
+
+        <section>
+            <h2 class="text-2xl font-bold text-[#0f172a]">
+                Ringkasan Informasi Fasilitas
+            </h2>
+
+            <p class="mt-2 mb-5 text-slate-600">
+                Contoh informasi fasilitas berdasarkan data simulasi.
+            </p>
+
+            <div class="overflow-x-auto rounded-xl bg-white shadow-sm">
+                <table class="w-full border-collapse text-left">
+                    <thead class="bg-[#0f172a] text-white">
+                        <tr>
+                            <th class="px-5 py-4">Informasi</th>
+                            <th class="px-5 py-4">Nilai Simulasi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="divide-y divide-slate-200">
+                        <tr class="hover:bg-slate-50">
+                            <th scope="row" class="px-5 py-4 font-medium">Nama Fasilitas</th>
+                            <td class="px-5 py-4">PLTN Edukasi Nusantara</td>
+                        </tr>
+
+                        <tr class="hover:bg-slate-50">
+                            <th scope="row" class="px-5 py-4 font-medium">ID Fasilitas</th>
+                            <td class="px-5 py-4">SEN-001</td>
+                        </tr>
+
+                        <tr class="hover:bg-slate-50">
+                            <th scope="row" class="px-5 py-4 font-medium">Status</th>
+                            <td class="px-5 py-4">
+                                <span class="rounded-full bg-green-100 px-3 py-1 text-sm font-semibold text-green-800">
+                                    Beroperasi
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-slate-50">
+                            <th scope="row" class="px-5 py-4 font-medium">Daya Keluaran</th>
+                            <td class="px-5 py-4">850 MW </td>
+                        </tr>
+
+                        <tr class="hover:bg-slate-50">
+                            <th scope="row" class="px-5 py-4 font-medium">Suhu Pendingin</th>
+                            <td class="px-5 py-4">295 °C </td>
+                        </tr>
+
+                        <tr class="hover:bg-slate-50">
+                            <th scope="row" class="px-5 py-4 font-medium">Waktu Pembaruan</th>
+                            <td class="px-5 py-4">27 September 2026, 20.00 WIB (Contoh)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-4 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm leading-6 text-amber-900">
+                <strong>Catatan:</strong> Semua nilai di halaman ini merupakan data
+                simulasi untuk pembelajaran, bukan data operasional PLTN yang nyata
+                dan bukan sistem pemantauan keselamatan reaktor.
+            </div>
+        </section>
+
+        <section>
+            <h2 class="mb-6 text-2xl font-bold text-[#0f172a]">
+                Menu Sistem
+            </h2>
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+                <article
+                    class="rounded-xl bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                    <h3 class="text-xl font-bold text-[#0f172a]">Data Fasilitas</h3>
+                    <p class="mt-3 mb-5 leading-6 text-slate-600">
+                        Melihat identitas dan informasi fasilitas dalam data simulasi.
+                    </p>
+                    <a href="data-pltn.html"
+                        class="inline-block rounded-lg bg-[#16a34a] px-5 py-2.5 font-semibold text-white hover:bg-[#15803d]">
+                        Buka Halaman
+                    </a>
+                </article>
+
+                <article
+                    class="rounded-xl bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                    <h3 class="text-xl font-bold text-[#0f172a]">Pemantauan Lingkungan</h3>
+                    <p class="mt-3 mb-5 leading-6 text-slate-600">
+                        Melihat contoh informasi parameter lingkungan yang disimulasikan.
+                    </p>
+                    <a href="pemantauan.html"
+                        class="inline-block rounded-lg bg-[#16a34a] px-5 py-2.5 font-semibold text-white hover:bg-[#15803d]">
+                        Buka Halaman
+                    </a>
+                </article>
+
+                <article
+                    class="rounded-xl bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                    <h3 class="text-xl font-bold text-[#0f172a]">Laporan Pemantauan</h3>
+                    <p class="mt-3 mb-5 leading-6 text-slate-600">
+                        Melihat riwayat dan contoh formulir laporan pemantauan.
+                    </p>
+                    <a href="laporan.html"
+                        class="inline-block rounded-lg bg-[#16a34a] px-5 py-2.5 font-semibold text-white hover:bg-[#15803d]">
+                        Buka Halaman
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="rounded-xl border-l-4 border-[#22c55e] bg-white p-9 shadow-sm">
+            <h2 class="mb-3 text-xl font-bold text-[#0f172a]">
+                Tentang NucleoMonitor
+            </h2>
+            <p class="leading-7 text-slate-600">
+                Prototype ini dibuat sebagai media pembelajaran pengembangan web
+                untuk menyajikan informasi fasilitas, pemantauan lingkungan, dan
+                laporan secara terstruktur. Sistem ini tidak digunakan untuk
+                mengendalikan fasilitas nyata.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="mt-10 bg-[#0f172a] px-5 py-6 text-center text-sm leading-6 text-slate-300">
+        <p>&copy; 2026 NucleoMonitor.</p>
+        <p class="mt-1">Sistem pemantauan operasional atau keselamatan PLTN .</p>
+    </footer>
+
+</body>
+
+</html>

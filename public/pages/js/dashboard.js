@@ -1,0 +1,7 @@
+// Menghitung ringkasan dashboard dari array.
+$(function () {
+  const data = window.NucleoData;
+  $("#dashboardFacilityCount").text(data.facilities.length);
+  $("#dashboardMonitoringCount").text(data.monitoring.length);
+  $("#dashboardReportCount").text(data.reports.length);
+});
