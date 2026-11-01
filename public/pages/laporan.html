@@ -41,13 +41,13 @@
                     Data Fasilitas
                 </a>
 
-                <a href="pemantauan.html" aria-current="page"
-                    class="rounded-lg bg-slate-800 px-3 py-2 font-semibold text-white">
+                <a href="pemantauan.html"
+                    class="rounded-lg px-3 py-2 text-white transition hover:bg-slate-800 hover:text-[#22c55e]">
                     Pemantauan Lingkungan
                 </a>
 
-                <a href="laporan.html"
-                    class="rounded-lg px-3 py-2 text-white transition hover:bg-slate-800 hover:text-[#22c55e]">
+                <a href="laporan.html" aria-current="page"
+                    class="rounded-lg bg-slate-800 px-3 py-2 font-semibold text-white">
                     Laporan Pemantauan
                 </a>
 
@@ -56,6 +56,23 @@
     </nav>
 <!-- Konten Utama -->
     <main class="mx-auto max-w-7xl space-y-10 px-5 py-10 item-center ">
+
+        <!-- Data eksternal untuk demonstrasi AJAX -->
+        <section class="rounded-2xl border-l-4 border-[#22c55e] bg-white p-6 shadow-sm md:p-8" aria-labelledby="communityNotesTitle">
+            <div class="flex flex-wrap items-start justify-between gap-4">
+                <div>
+                    <span class="inline-block rounded-full bg-green-100 px-3 py-1 text-sm font-semibold text-green-800">Konsumsi API · AJAX</span>
+                    <h2 id="communityNotesTitle" class="mt-3 text-2xl font-bold text-[#0f172a]">Catatan komunitas</h2>
+                    <p class="mt-2 max-w-2xl leading-6 text-slate-600">Contoh catatan publik yang dimuat secara asinkron dari JSONPlaceholder. Data ini hanya untuk demonstrasi dan bukan laporan resmi.</p>
+                </div>
+                <button id="retryCommunityNotes" type="button" class="rounded-lg bg-[#0f172a] px-4 py-2.5 font-semibold text-white transition hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Muat ulang</button>
+            </div>
+            <label for="communityNotesSearch" class="mt-6 block text-sm font-semibold text-slate-700">Cari catatan</label>
+            <input id="communityNotesSearch" type="search" placeholder="Cari berdasarkan judul atau isi..." class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100" aria-controls="communityNotesList" />
+            <p id="communityNotesStatus" class="mt-4 rounded-lg bg-slate-50 p-4 text-slate-600" role="status" aria-live="polite">Menyiapkan permintaan...</p>
+            <ul id="communityNotesList" class="mt-4 grid gap-4 md:grid-cols-2" aria-label="Daftar catatan komunitas"></ul>
+            <p class="mt-5 text-xs leading-5 text-slate-500">Endpoint: <code>https://jsonplaceholder.typicode.com/posts?_limit=8</code> · Metode GET menggunakan Fetch API.</p>
+        </section>
 
 
         <!-- Section Judul -->
@@ -212,7 +229,7 @@
         <p>Seluruh informasi dan angka pada halaman ini adalah data simulasi, bukan data operasional nyata.</p>
     </footer>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="js/data.js"></script><script src="js/main.js"></script><script src="js/laporan.js"></script>
+<script src="js/data.js"></script><script src="js/main.js"></script><script src="js/laporan.js"></script><script src="js/comunity-notes.js"></script>
 </body>
 
 </html>
